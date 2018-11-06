@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Project;
 
 class Client extends Model
 {
@@ -14,4 +15,8 @@ class Client extends Model
         'city',
         'phone',
         'email'];
+    
+    public function projects(){
+        return $this->hasMany(Project::class);
+    }
 }
